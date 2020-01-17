@@ -2,7 +2,7 @@
 
 ### Introduction
 
-Simplify the steps in fill in Excel of physics lab
+Simplify the **uncertainty propagation** in Excel of physics lab report
 
 ### Tutorial
 
