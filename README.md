@@ -12,7 +12,7 @@ A utility to simplify the **uncertainty propagation** in Excel of physics lab re
 
 3. Follow the instructions! 😀 
 
-### To-do
+### To-dos
 
 - [ ] Eliminate useless trailing 0's
 
