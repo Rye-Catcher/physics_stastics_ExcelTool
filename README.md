@@ -1,4 +1,4 @@
-# physics_statics_ExcelTool V1.0
+# physics_statistics_ExcelTool V1.0
 
 ### Introduction
 
