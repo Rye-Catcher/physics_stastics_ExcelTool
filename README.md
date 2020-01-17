@@ -14,8 +14,8 @@ Simplify the steps in fill in Excel of physics lab
 
 ### To-do
 
-- [] cancel displaying useless 0
-- [] more beautiful !  
+-[] cancel displaying useless 0
+-[] more beautiful !  
 
 ### License
 
