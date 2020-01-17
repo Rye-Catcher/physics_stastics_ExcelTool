@@ -272,14 +272,16 @@ public:
 				
 				//printf("%lf*",result.get_const());
 				char tempstr[MAX_DIGIT];
+				int kk;
+				
 				snprintf(tempstr, MAX_DIGIT, "%lf", result.get_const());
-				for (int k = MAX_DIGIT; (tempstr[k] <= '0' || tempstr[k] > '9') && tempstr[k] != '.'; k--)
-    				;
-				if (tempstr[k] == '.')
-    				tempstr[k] = '\0';
+				for (kk = MAX_DIGIT; (tempstr[kk] <= '0' || tempstr[kk] > '9') && tempstr[kk] != '.'; kk--) ;
+				if (tempstr[kk] == '.')
+    				tempstr[kk] = '\0';
 				else
-    				tempstr[k+1] = '\0';
+    				tempstr[kk+1] = '\0';
 				printf("%s*", tempstr);
+				//去除小数末尾多余0    by Hu Jialun 
 				
 				//可改进  --指数为0时 
 				for(int k=1;k<=m;k++)
