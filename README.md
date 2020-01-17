@@ -1,4 +1,4 @@
-# physics_statistics_ExcelTool V1.0
+# physics_statistics_ExcelTool V1.1
 
 ### Introduction
 
@@ -17,6 +17,11 @@ A utility to simplify the **uncertainty propagation** in Excel of physics lab re
 - [ ] Eliminate useless trailing 0's
 
 - [ ] More beautiful!  
+
+
+### Journal
+
+v1.1 Fix useless 0 in the constant due to double print out [see pull-request by SuibianP](https://github.com/Rye-Catcher/physics_statistics_ExcelTool/pull/2)
 
 ### License
 
