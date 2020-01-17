@@ -273,12 +273,12 @@ public:
 				//printf("%lf*",result.get_const());
 				char tempstr[MAX_DIGIT];
 				snprintf(tempstr, MAX_DIGIT, "%lf", result.get_const());
-				for (int i = MAX_DIGIT; (tempstr[i] <= '0' || tempstr[i] > '9') && tempstr[i] != '.'; i--)
+				for (int k = MAX_DIGIT; (tempstr[k] <= '0' || tempstr[k] > '9') && tempstr[k] != '.'; k--)
     				;
-				if (tempstr[i] == '.')
-    				tempstr[i] = '\0';
+				if (tempstr[k] == '.')
+    				tempstr[k] = '\0';
 				else
-    				tempstr[i+1] = '\0';
+    				tempstr[k+1] = '\0';
 				printf("%s*", tempstr);
 				
 				//可改进  --指数为0时 
