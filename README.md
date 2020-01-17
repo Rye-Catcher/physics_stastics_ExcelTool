@@ -6,7 +6,7 @@ Simplify the steps in fill in Excel of physics lab
 
 ### Tutorial
 
-1. Download / Clone the repositories
+1. Download / Clone the repository
 
 2. Click "partial_derivative.exe"
 
