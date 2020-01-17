@@ -2,23 +2,22 @@
 
 ### Introduction
 
-Simplify the **uncertainty propagation** in Excel of physics lab report
+A utility to simplify the **uncertainty propagation** in Excel of physics lab report.
 
 ### Tutorial
 
 1. Download / Clone the repository
 
-2. Click "partial_derivative.exe"
+2. Double click "partial_derivatives.exe"
 
-3. Follow the instructions ! 😀 
+3. Follow the instructions! 😀 
 
 ### To-do
 
-- [ ] cancel displaying useless 0
+- [ ] Eliminate useless trailing 0's
 
-- [ ] more beautiful !  
+- [ ] More beautiful!  
 
 ### License
 
 MIT License
-
