@@ -273,7 +273,7 @@ public:
 				//printf("%lf*",result.get_const());
 				int CurrentDigit;
 				char tempstr[MAX_DIGIT];
-				snprintf(tempstr[0], MAX_DIGIT, "%lf", result.get_const());
+				snprintf(tempstr, MAX_DIGIT, "%lf", result.get_const());
 				for (CurrentDigit = MAX_DIGIT; (tempstr[i] <= '0' || tempstr[i] > '9') && tempstr[i] != '.'; CurrentDigit--)
     				;
 				if (tempstr[i] == '.')
