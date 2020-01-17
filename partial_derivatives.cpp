@@ -5,8 +5,10 @@
 #include <cctype>
 #include <iostream>
 #include <cmath>
+#include <string>
 using namespace std;
 const int maxn=17;
+const int MAX_DIGIT = 10;
 int n;
 
 
@@ -16,9 +18,9 @@ class Poly
 private:
 	
 	double c_const;
-	//µ¥ÏîÊ½Ç°³£Êı 
+	//å•é¡¹å¼å‰å¸¸æ•° 
 	int vpower[maxn];
-	//±äÁ¿µÄÃİ
+	//å˜é‡çš„å¹‚
 	
 public:
 	
@@ -63,7 +65,7 @@ class Func
 {
 private:
 	int n,m;
-	//µ¥ÏîÊ½¸öÊı  ±äÁ¿¸öÊı 
+	//å•é¡¹å¼ä¸ªæ•°  å˜é‡ä¸ªæ•° 
 	Poly poly[maxn];
 	char variable[maxn];
 	int is_input[515];
@@ -81,12 +83,12 @@ public:
 	
 	void print_readme()
 	{
-		printf("»¶Ó­Ê¹ÓÃÕâ¸öĞ¡³ÌĞò£¡\n");
-		printf("ËüÊÇÎªÁË¼ò»¯Íê³Éphysics labµÄExcel¶ø¿ª·¢µÄ\n");
-		printf("¸ø¶¨Ò»¸öº¯Êı£¬±ê×¢³ö¶ÔÓ¦±äÁ¿µÄÎ»ÖÃ£¬Ëü¿ÉÒÔÉú³ÉÇó³öÕâ¸öº¯ÊıËù´ú±íÎïÀíÁ¿µÄuncertaintyÔÚExcelÀïµÄ±í´ïÊ½\n"); 
-		printf("Ä¿Ç°Ö»Ö§³Ö¶àÏîÊ½º¯Êı");
-		printf("ÓÉÓÚÊäÈë·½Ê½ÌØÊâ£¬Ä¬ÈÏµ¥ÏîÊ½Ö®¼äÊ¹ÓÃ¼ÓºÅÁ¬½Ó;Èç¹ûº¯ÊıÖĞÊÇÊ¹ÓÃ¼õºÅÁ¬½Ó£¬ÇëÔÚºóÒ»¸öµÄ³£ÊıÏî¼ÓÉÏ¸ººÅ\n");
-		printf("ÇëÈ·±£º¯Êı±äÁ¿ÃûÎªÒ»Î»Ó¢ÎÄ×ÖÄ¸\n");
+		printf("æ¬¢è¿ä½¿ç”¨è¿™ä¸ªå°ç¨‹åºï¼\n");
+		printf("å®ƒæ˜¯ä¸ºäº†ç®€åŒ–å®Œæˆphysics labçš„Excelè€Œå¼€å‘çš„\n");
+		printf("ç»™å®šä¸€ä¸ªå‡½æ•°ï¼Œæ ‡æ³¨å‡ºå¯¹åº”å˜é‡çš„ä½ç½®ï¼Œå®ƒå¯ä»¥ç”Ÿæˆæ±‚å‡ºè¿™ä¸ªå‡½æ•°æ‰€ä»£è¡¨ç‰©ç†é‡çš„uncertaintyåœ¨Excelé‡Œçš„è¡¨è¾¾å¼\n"); 
+		printf("ç›®å‰åªæ”¯æŒå¤šé¡¹å¼å‡½æ•°");
+		printf("ç”±äºè¾“å…¥æ–¹å¼ç‰¹æ®Šï¼Œé»˜è®¤å•é¡¹å¼ä¹‹é—´ä½¿ç”¨åŠ å·è¿æ¥;å¦‚æœå‡½æ•°ä¸­æ˜¯ä½¿ç”¨å‡å·è¿æ¥ï¼Œè¯·åœ¨åä¸€ä¸ªçš„å¸¸æ•°é¡¹åŠ ä¸Šè´Ÿå·\n");
+		printf("è¯·ç¡®ä¿å‡½æ•°å˜é‡åä¸ºä¸€ä½è‹±æ–‡å­—æ¯\n");
 		printf("-----------");
 	}
 	
@@ -96,17 +98,17 @@ public:
 		double c;
 		int vpower[maxn];
 		
-		printf("ÇëÊäÈëº¯Êı°üº¬µÄµ¥ÏîÊ½¸öÊı\n>");
+		printf("è¯·è¾“å…¥å‡½æ•°åŒ…å«çš„å•é¡¹å¼ä¸ªæ•°\n>");
 		scanf("%d",&n);
 		m=0;
 		
 		for(int i=1;i<=n;i++)
 		{
-			int t=0;//ÁÙÊ±
+			int t=0;//ä¸´æ—¶
 			c=0;
 			memset(vpower,0,sizeof(vpower));
 			 
-			printf("ÇëÊäÈëµÚ%d¸öµ¥ÏîÊ½£¬Ö¸ÊıÇëÊ¹ÓÃÀ¨ºÅÀ¨×¡£¬Èç: -3.5x^(-3)y^(2), 2x^(1)y^(-1)\n>", i);
+			printf("è¯·è¾“å…¥ç¬¬%dä¸ªå•é¡¹å¼ï¼ŒæŒ‡æ•°è¯·ä½¿ç”¨æ‹¬å·æ‹¬ä½ï¼Œå¦‚: -3.5x^(-3)y^(2), 2x^(1)y^(-1)\n>", i);
 			cin>>input_s;
 			
 			if(input_s[0]=='-')
@@ -234,10 +236,10 @@ public:
 			
 			poly[i]=Poly(c, vpower);
 		} 
-		//ÊäÈëµ¥ÏîÊ½
+		//è¾“å…¥å•é¡¹å¼
 		
 			
-		printf("Ì«°ôÁË£¬ÇëÊäÈë¶ÔÓ¦±äÁ¿µÄ 1.²âÁ¿ÖµÔÚExcel±í¸ñÀïµÄÎ»ÖÃ(Èç:B5)  2.uncertaintyµÄÎ»ÖÃ. ÓÃÒ»¸ö¿Õ¸ñ¸ô¿ª\n");	
+		printf("å¤ªæ£’äº†ï¼Œè¯·è¾“å…¥å¯¹åº”å˜é‡çš„ 1.æµ‹é‡å€¼åœ¨Excelè¡¨æ ¼é‡Œçš„ä½ç½®(å¦‚:B5)  2.uncertaintyçš„ä½ç½®. ç”¨ä¸€ä¸ªç©ºæ ¼éš”å¼€\n");	
 		
 		getchar();
 		for(int i=1;i<=m;i++)
@@ -268,9 +270,19 @@ public:
 					continue;
 				}
 				
-				printf("%lf*",result.get_const());
+				//printf("%lf*",result.get_const());
+				int CurrentDigit;
+				char tempstr[MAX_DIGIT];
+				snprintf(tempstr[0], MAX_DIGIT, "%lf", result.get_const());
+				for (CurrentDigit = MAX_DIGIT; (tempstr[i] <= '0' || tempstr[i] > '9') && tempstr[i] != '.'; CurrentDigit--)
+    				;
+				if (tempstr[i] == '.')
+    				tempstr[i] = '\0';
+				else
+    				tempstr[i][CurrentDigit + 1] = '\0';
+				printf("%s*", tempstr);
 				
-				//¿É¸Ä½ø  --Ö¸ÊıÎª0Ê± 
+				//å¯æ”¹è¿›  --æŒ‡æ•°ä¸º0æ—¶ 
 				for(int k=1;k<=m;k++)
 				{
 					printf("%c%d^",posx[k][0],posy[k][0]);
